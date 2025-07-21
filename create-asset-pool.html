@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Asset Pool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-5">
+  <h2 class="mb-4 text-center">Create Asset Pool</h2>
+
+  <form method="POST" action="success_asset_pool.html" enctype="multipart/form-data">
+    <!-- Proposed Road -->
+    <div class="row g-3 mb-4">
+      <h5>Proposed Road</h5>
+      <div class="col-md-6">
+        <label class="form-label">Road Name</label>
+        <input type="text" name="road_name" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Length (km)</label>
+        <input type="number" name="road_length" step="0.01" class="form-control">
+      </div>
+    </div>
+
+    <!-- Proposed Culvert -->
+    <div class="row g-3 mb-4">
+      <h5>Proposed Culvert</h5>
+      <div class="col-md-6">
+        <label class="form-label">Culvert Name</label>
+        <input type="text" name="culvert_name" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Type</label>
+        <select name="culvert_type" class="form-select">
+          <option value="">-- Select Type --</option>
+          <option value="box">Box</option>
+          <option value="pipe">Pipe</option>
+          <option value="arch">Arch</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Proposed Bridge -->
+    <div class="row g-3 mb-4">
+      <h5>Proposed Bridge</h5>
+      <div class="col-md-6">
+        <label class="form-label">Bridge Name</label>
+        <input type="text" name="bridge_name" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Span (m)</label>
+        <input type="number" name="bridge_span" class="form-control">
+      </div>
+    </div>
+
+    <!-- Upload Shapefile -->
+    <div class="mb-4">
+      <label class="form-label">Upload Road Shapefile (.shp)</label>
+      <input type="file" name="shapefile" class="form-control" accept=".shp">
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-success">Save Asset Pool</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

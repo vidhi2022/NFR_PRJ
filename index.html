@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create New Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-5">
+  <div class="mb-4 text-center">
+    <h1 class="text-uppercase text-primary fw-bold">Create New Project</h1>
+  </div>
+
+  <form action="success.html" method="GET" enctype="multipart/form-data">
+    <!-- Project Information -->
+    <div class="card mb-4">
+      <div class="card-header bg-light fw-semibold">Project Information</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Project Name</label>
+            <input type="text" name="project_name" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Owner Department</label>
+            <select name="owner_dept_cd" class="form-select" required>
+              <option value="">-- Select Department --</option>
+              <option value="RNB">Road & Bridge</option>
+              <option value="HSG">Housing</option>
+              <option value="MECH">Mechanical</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Division Code</label>
+            <select name="division_cd" class="form-select">
+              <option value="">-- Select Division --</option>
+              <option value="RNB">Div I</option>
+              <option value="HSG">Div II</option>
+              <option value="MECH">Div III</option>
+            </select>
+          </div>
+          
+		  
+		  <!-- Parent Asset Selection -->
+<div class="card mb-4">
+  <div class="card-header bg-light fw-semibold">Parent Asset</div>
+  <div class="card-body">
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="parent_asset_type" id="existingAsset" value="existing" checked>
+          <label class="form-check-label" for="existingAsset">Existing Road and Sub Assets</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="parent_asset_type" id="assetPool" value="pool">
+          <label class="form-check-label" for="assetPool">From Asset Pool</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- If Existing Road is selected -->
+    <div id="existingAssetFields">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Select Road</label>
+          <select name="parent_road" class="form-select">
+            <option value="">-- Select Road --</option>
+            <option value="Rd0001">Rd0001</option>
+            <option value="Rd0002">Rd0002</option>
+            <option value="Rd0003">Rd0003</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Select Sub Asset</label>
+          <select name="sub_asset" class="form-select">
+            <option value="">-- Select Sub Asset --</option>
+            <option value="culvert">Culvert</option>
+            <option value="bridge">Bridge</option>
+            <option value="drain">Drain</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- If Asset Pool is selected -->
+    <div id="assetPoolFields" style="display: none;">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Select from Asset Pool</label>
+          <select name="asset_pool" class="form-select">
+            <option value="">-- Select Asset --</option>
+            <option value="AP001">Asset Pool 001</option>
+            <option value="AP002">Asset Pool 002</option>
+            <option value="AP003">Asset Pool 003</option>
+          </select>
+        </div>
+		<div class="col-md-6 d-flex align-items-end">
+		  <a href="create-asset-pool.html" class="btn btn-outline-primary">
+			➕ Create New Asset Pool
+		  </a>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          <div class="col-md-6">
+            <label class="form-label">Project Start Date</label>
+            <input type="date" name="project_start_date" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Project End Date</label>
+            <input type="date" name="project_end_date" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Project Status Code</label>
+            <select name="project_status_cd" class="form-select">
+              <option value="">-- Select Status --</option>
+              <option value="RNB">In Progress</option>
+              <option value="HSG">Completed</option>
+              <option value="MECH">Cancelled</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Project Awarded To</label>
+            <select name="project_awarded_to" class="form-select">
+              <option value="">-- Select Constructor --</option>
+              <option value="RNB">M/s K. Nakhro & Sons</option>
+              <option value="HSG">M/s LPSS</option>
+              <option value="MECH">Naga Construction</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Site Incharge Details -->
+    <div class="card mb-4">
+      <div class="card-header bg-light fw-semibold">Site Incharge Details</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Site Incharge Office</label>
+            <select name="site_incharge_office_cd" class="form-select">
+              <option value="">-- Select Office --</option>
+              <option value="RNB">Site Eng Office1</option>
+              <option value="HSG">Site Eng Office2</option>
+              <option value="MECH">Site Eng Office3</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Site Incharge Name</label>
+            <input type="text" name="site_incharge_name" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Site Incharge Phone No.</label>
+            <input type="text" name="site_incharge_ph_no" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Is Published</label>
+            <select name="is_published" class="form-select">
+              <option value="Y">Yes</option>
+              <option value="N">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upload Documents -->
+    <div class="card mb-4">
+      <div class="card-header bg-light fw-semibold">Upload Documents</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Upload Project Plan (PDF)</label>
+            <input type="file" name="project_plan" class="form-control" accept=".pdf">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Upload Site Images</label>
+            <input type="file" name="site_images[]" class="form-control" multiple accept="image/*">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Upload Work Order Document</label>
+            <input type="file" name="work_order_doc" class="form-control" accept=".pdf,.doc,.docx">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary px-4">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const existingAssetRadio = document.getElementById('existingAsset');
+  const assetPoolRadio = document.getElementById('assetPool');
+  const existingAssetFields = document.getElementById('existingAssetFields');
+  const assetPoolFields = document.getElementById('assetPoolFields');
+
+  function toggleAssetFields() {
+    if (existingAssetRadio.checked) {
+      existingAssetFields.style.display = 'block';
+      assetPoolFields.style.display = 'none';
+    } else {
+      existingAssetFields.style.display = 'none';
+      assetPoolFields.style.display = 'block';
+    }
+  }
+
+  existingAssetRadio.addEventListener('change', toggleAssetFields);
+  assetPoolRadio.addEventListener('change', toggleAssetFields);
+
+  // Call once to set initial visibility
+  toggleAssetFields();
+</script>
+</body>
+</html>
